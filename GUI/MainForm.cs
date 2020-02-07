@@ -773,6 +773,7 @@ namespace GUI
                     {
                         Console.WriteLine(e);
 
+#if false
                         var bv = new ByteViewer();
                         bv.Dock = DockStyle.Fill;
                         tab2.Controls.Add(bv);
@@ -782,6 +783,7 @@ namespace GUI
                             resource.Reader.BaseStream.Position = block.Value.Offset;
                             bv.SetBytes(resource.Reader.ReadBytes((int)block.Value.Size));
                         }));
+#endif
                     }
 
                     resTabs.TabPages.Add(tab2);
@@ -797,6 +799,7 @@ namespace GUI
                 };
                 tab.Controls.Add(resTabs);
 
+#if false
                 var bvTab = new TabPage("Hex");
                 var bv = new ByteViewer
                 {
@@ -832,6 +835,7 @@ namespace GUI
                         bv.SetFile(fileName);
                     }
                 }));
+#endif
             }
 
             return tab;
